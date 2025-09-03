@@ -1,0 +1,310 @@
+.game {
+    font-family: "Source Sans 3", sans-serif;
+    position: relative;
+    display: block;
+    background-color: #fffcef;
+    height: 87.5vh;
+    padding: 1rem 5rem;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 0;
+    overflow: hidden;
+    cursor: default;
+    text-align: center;
+    letter-spacing: 1px;
+}
+
+h1 {
+    margin-top: 0.25rem;
+    margin-bottom: 1rem;
+    color: #9292b1;
+}
+
+.testScreen {
+    /* display: none; */
+    position: relative;
+    height: 100%;
+    padding: 3rem 3rem 0;
+}
+
+.resultsScreen {
+    display: block;
+    height: 100%;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+#sampleText {
+    position: absolute;
+    display: flex;
+    font-size: 2rem;
+    white-space: pre;
+    flex-wrap: wrap;
+    color: rgba(25, 27, 40, 0.25);
+}
+
+#sampleText div {
+    display: flex;
+}
+
+#sampleText p {
+    font-weight: 650;
+    letter-spacing: 2px;
+}
+        
+#time {
+    position: relative;
+    margin: 4rem;
+    font-size: 2rem;
+}
+
+.typingBar {
+    height: 20px;
+    width: 2px;
+}
+
+.correct {
+    color: #191b28;
+}
+
+.game.dark .correct {
+    color: #fffcef;
+}
+
+.incorrect {
+    color: #91115d;
+}
+
+#goTest {
+    border: 1.5px solid #9292b1;
+    border-radius: 25px;
+    background: none;
+    font-size: 1.25rem;
+    color: #9292b1;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+}
+
+#goTest:hover {
+    transform: scale(0.955);
+    transition: 0.2s ease;
+}
+
+.results__container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin: 3rem;
+}
+
+.results__item h2 {
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+.results__item p {
+    font-size: 1.25rem;
+    margin: 0.75rem;
+}
+
+#wpm, #accuracy {
+    font-family: "DM Serif Display", serif;
+    font-weight: 400;
+    font-style: italic;
+    font-size: 2rem;
+}
+
+        /* button {
+            padding: 10px 20px;
+            background: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:disabled {
+            background: #ccc;
+        }
+        button:hover {
+            background: #45a049;
+        }
+
+        #goTest {
+            cursor: pointer;
+        }
+
+        #goTest:disabled {
+            background: #ccc;
+        } */
+
+/* Light Dark Mode Toggle */
+.darkModeToggle {
+    width: 70px;
+    height: 30px;
+    display: block;
+    background:rgb(190, 190, 197);
+    border-radius: 200px;
+    cursor: pointer;
+    transition: 0.3s;
+    z-index: 101;
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%) rotate(90deg);
+    left: 3rem;
+}
+
+.darkModeToggle:after {
+    content: "";
+    width: 33px;
+    height: 24px;
+    position: absolute;
+    top: 3px;
+    left: 3.5px;
+    background-color: #191b28;
+    border-radius: 180px;
+    box-shadow: 0px 5px 10px rgba(0,0,0,0.2);
+    transition: 0.3s;
+}
+
+#darkModeToggle {
+    width: 0;
+    height: 0;
+    visibility: hidden;
+}
+
+#darkModeToggle:checked + .darkModeToggle:after {
+    left: 33px;
+    z-index: 102;
+}
+
+.darkModeToggle #light, .darkModeToggle #dark {
+    position: absolute;
+    width: 45px;
+    top: 8px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    z-index: 105;
+}
+
+.darkModeToggle #light {
+    /* left: 0px; */
+    right: 27px;
+    color: #fffcef;
+    transition: 0.3s;
+    transform: rotate(-90deg);
+}
+
+.darkModeToggle #dark {
+    left: 30px;
+    color: #040618;
+    transition: 0.3s;
+    transform: rotate(-90deg);
+}
+
+#darkModeToggle:checked + .darkModeToggle #light {
+    color: #040618;
+    z-index: 106;
+}
+
+#darkModeToggle:checked + .darkModeToggle #dark {
+    color: #fffcef;
+    z-index: 106;
+}
+
+/* Test Options Toggle */
+#optionsToggle {
+    width: 0;
+    height: 0;
+    visibility: hidden;
+}
+
+.optionsToggle {
+    position: relative;
+    display: block;
+    margin-top: 8rem;
+    justify-self: center;
+    width: 105px;
+    height: 31.5px;
+    border: 1.5px solid #9292b1;
+    border-radius: 200px;
+    cursor: pointer;
+    transition: 0.3s;
+    z-index: 101;
+}
+
+.optionsToggle:after {
+    content: "";
+    width: 47px;
+    height: 20.5px;
+    position: absolute;
+    top: 2.5px;
+    left: 2.5px;
+    border: 1.5px solid #9292b1;
+    border-radius: 180px;
+    box-shadow: 0px 5px 10px rgba(0,0,0,0.2);
+    transition: 0.3s;
+}
+
+#optionsToggle:checked + .optionsToggle:after {
+    left: 49.5px;
+    z-index: 102;
+}
+
+.optionsToggle p {
+    position: absolute;
+    width: 45px;
+    top: 5.5px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    z-index: 105;
+}
+
+.optionsToggle #timeOption {
+    left: 5px;
+    color: #040618;
+}
+
+.optionsToggle #wordsOption {
+    left: 53px;
+    color: #9292b1;
+}
+
+#optionsToggle:checked + .optionsToggle #timeOption {
+    color: #9292b1;
+    z-index: 106;
+}
+
+#optionsToggle:checked + .optionsToggle #wordsOption {
+    color: #040618;
+    z-index: 106;
+}
+
+.timeOption__container, .wordsOption__container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4rem;
+    margin-top: 2.5rem;
+}
+
+.wordsOption__container {
+    display: none;
+}
+
+.option__item {
+    font-size: 1.5rem;
+    font-weight: 400;
+    background: none;
+    color: rgba(25, 27, 40, 0.5);
+    border: none;
+    cursor: pointer;
+}
+
+.option__item.chosen {
+    color: #191b28 !important;
+}
+
+.game.dark .option__item.chosen {
+    color: #fffcef !important;
+}

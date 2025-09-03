@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Typing Speed Test</title>
+    <link rel="stylesheet" href="C:\Users\rache\Desktop\Portfolio\styles.css"/>
+    <link rel="stylesheet" href="typeSpeed.css"/>
+    <script src="https://kit.fontawesome.com/6e6a14d44a.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Menu Section -->
+    <nav class="navbar">
+        <input type="checkbox" id="navbar__toggle">
+        <label for="navbar__toggle">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </label>
+        <div class="navbar__container">
+             <ul class="navbar__menu">
+                <h1>Table of Contents</h1>
+                <div class="navbar__item">
+                    <a href="index.html#" class="navbar__links">Welcome</a>
+                </div>
+                <div class="navbar__item">
+                    <a href="index.html#introduction" class="navbar__links">About Me</a>
+                </div>
+                <div class="navbar__item cs">
+                    <a href="index.html#work" class="navbar__links navbar__CS">Work: Computer Science</a>
+                    <a href="index.html#work" class="navbar__linksCS navbar__subItem">Project 1</a>
+                </div>
+                <div class="navbar__item bba">
+                    <a href="index.html#work" class="navbar__links navbar__BBA">Work: Business</a>
+                    <a href="index.html#work" class="navbar__linksBBA navbar__subItem subhead">Leadership Experiences</a>
+                    <a href="LE_deca.html" class="navbar__linksBBA navbar__subItem">Maple DECA</a>
+                    <a href="LE_canmun.html" class="navbar__linksBBA navbar__subItem">CANMUN</a>
+                    <a href="LE_mhsmun.html" class="navbar__linksBBA navbar__subItem">MHSMUN</a>
+                    <a href="index.html#work" class="navbar__linksBBA navbar__subItem subhead">Business Case Studies</a>
+                    <a href="BCS_aritzia.html" class="navbar__linksBBA navbar__subItem">Aritzia</a>
+                    <a href="index.html#work" class="navbar__linksBBA navbar__subItem subhead">Social Media Work</a>
+                    <a href="SMW_23e2.html" class="navbar__linksBBA navbar__subItem">23e2 Digital</a>
+                    <a href="SMW_general.html" class="navbar__linksBBA navbar__subItem">CANMUN, DECA, Stuco, IFI</a>
+                </div>
+                <div class="navbar__item">
+                    <a href="ib.html" class="navbar__links">IB Resources</a>
+                </div>
+                <div class="navbar__item">
+                    <a href="index.html#contact" class="navbar__links">Contact</a>
+                </div>
+            </ul>
+        </div>
+        <a href="index.html#" class="navbar__homeText">racheljxw.designs</a>
+    </nav>
+
+        <a href="#">
+            <div class="toTop">
+                <i class="fa-solid fa-arrow-up"></i>
+            </div>
+        </a>
+
+    <section class="game">
+        <h1>Typing Speed Test</h1>
+        <input type="checkbox" id="darkModeToggle">
+        <label for="darkModeToggle" class="darkModeToggle">
+            <i class="fa-regular fa-sun" id="light"></i>
+            <i class="fa-regular fa-moon" id="dark"></i>
+        </label>
+        <div class="testScreen">
+            <div class="" id="sampleText"></div>
+            <div class="options">
+                <input type="checkbox" id="optionsToggle">
+                <label for="optionsToggle" class="optionsToggle">
+                    <p id="timeOption">Time</p>
+                    <p id="wordsOption">Words</p>
+                </label>
+                <div class="timeOption__container">
+                    <button class="option__item chosen" id="timeOption--15">15s</button>
+                    <button class="option__item" id="timeOption--30">30s</button>
+                    <button class="option__item" id="timeOption--60">60s</button>
+                </div>
+                <div class="wordsOption__container">
+                    <button class="option__item" id="wordsOption--10">10</button>
+                    <button class="option__item" id="wordsOption--25">25</button>
+                    <button class="option__item" id="wordsOption--50">50</button>
+                </div>
+            </div>
+            <p id="time"></p>
+        </div>
+        <div class="resultsScreen">
+            <button id="goTest">Retake Test</button>
+            <div class="results__container">
+                <div class="results__item">
+                    <h2>WPM</h2>
+                    <p id="wpm"></p>
+                </div>
+                <div class="results__item">
+                    <h2>Accuracy</h2>
+                    <p id="accuracy"></p>
+                </div>
+            </div>
+            <div class="results__container">
+                <div class="results__item">
+                    <h2>Your Results</h2>
+                    <p id="userHighScore">High Score: </p>
+                    <p id="userAverage">Your Average: </p>
+                </div>
+                <div class="results__item">
+                    <h2>Global Results</h2>
+                    <p id="globalHighScore">Global High Score: 307 wpm, 100% acc</p>
+                    <p id="globalAverage">Global Average: 40 wpm, 95% acc</p>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <script src="C:\Users\rache\Desktop\Portfolio\script.js"></script>
+    <script defer src="C:\Users\rache\Desktop\Projects_TS\Type_Speed\dist\typeSpeed.js"></script>
+</body>
+<footer>
+    <div class="footer__container">
+        <div class="footer__item--socials">
+            <button><a href="https://www.linkedin.com/in/rachel-jingxian-wang-492922296/" class="footer__itemEach">linkedIn</a></button>
+            <button><a href="https://www.instagram.com/racheljxw/" class="footer__itemEach">instagram</a></button>
+        </div>
+        <div class="footer__item--text">
+            <p class="footer__itemEach">Rachel Wang 2025. All rights reserved.</p>
+            <p class="footer__itemEach">www.racheljxw.com Version 1.0</p>
+        </div>
+        <div class="footer__item--email">
+            <button class="footer__itemEachEmail"><a href="mailto:racheljxw@gmail.com" class="footer__itemEach">racheljxw@gmail.com</a></button>
+        </div>
+    </div>
+</footer>
+</html>
