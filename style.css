@@ -13,7 +13,7 @@
     position: relative;
     display: block;
     background-color: #fffcef;
-    height: 90vh;
+    height: 87.5vh;
     padding: 2vh 5vw;
     top: 0;
     left: 0;
@@ -54,7 +54,7 @@ h1 {
 #sampleText {
     position: absolute;
     display: flex;
-    font-size: 2.55vw;
+    font-size: 2.5vw;
     white-space: pre;
     flex-wrap: wrap;
     color: rgba(25, 27, 40, 0.25);
@@ -228,7 +228,7 @@ h1 {
 .optionsToggle:after {
     content: "";
     width: 47px;
-    height: 23.25px;
+    height: 21.5px;
     position: absolute;
     top: 2.5px;
     left: 2.5px;
