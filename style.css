@@ -13,8 +13,8 @@
     position: relative;
     display: block;
     background-color: #fffcef;
-    height: 87.5vh;
-    padding: 1rem 5rem;
+    height: 90vh;
+    padding: 2vh 5vw;
     top: 0;
     left: 0;
     width: 100%;
@@ -41,20 +41,20 @@ h1 {
     /* display: none; */
     position: relative;
     height: 100%;
-    padding: 3rem 3rem 0;
+    padding: 6vh 9vw 0;
 }
 
 .resultsScreen {
     display: block;
     height: 100%;
     justify-content: space-between;
-    margin-top: 20px;
+    margin-top: 10vh;
 }
 
 #sampleText {
     position: absolute;
     display: flex;
-    font-size: 2rem;
+    font-size: 2.55vw;
     white-space: pre;
     flex-wrap: wrap;
     color: rgba(25, 27, 40, 0.25);
@@ -71,14 +71,14 @@ h1 {
         
 #time {
     position: relative;
-    margin: 4rem;
-    font-size: 2rem;
+    margin: 4vw;
+    font-size: 4vh;
 }
 
-.typingBar {
+/* .typingBar {
     height: 20px;
     width: 2px;
-}
+} */
 
 .correct {
     color: #191b28;
@@ -93,12 +93,12 @@ h1 {
 }
 
 #goTest {
-    border: 1.5px solid #9292b1;
-    border-radius: 25px;
+    border: 0.25vh solid #9292b1;
+    border-radius: 25vh;
     background: none;
-    font-size: 1.25rem;
+    font-size: 2.5vh;
     color: #9292b1;
-    padding: 0.5rem 1rem;
+    padding: 0.75vh 1vw;
     cursor: pointer;
 }
 
@@ -110,16 +110,16 @@ h1 {
 .results__container {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    margin: 3rem;
+    margin: 3vw;
 }
 
 .results__item h2 {
-    font-size: 2rem;
+    font-size: 4vh;
     font-weight: 600;
 }
 
 .results__item p {
-    font-size: 1.25rem;
+    font-size: 3vh;
     margin: 0.75rem;
 }
 
@@ -127,31 +127,8 @@ h1 {
     font-family: "DM Serif Display", serif;
     font-weight: 400;
     font-style: italic;
-    font-size: 2rem;
+    font-size: 4vh;
 }
-
-        /* button {
-            padding: 10px 20px;
-            background: #4CAF50;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-        button:disabled {
-            background: #ccc;
-        }
-        button:hover {
-            background: #45a049;
-        }
-
-        #goTest {
-            cursor: pointer;
-        }
-
-        #goTest:disabled {
-            background: #ccc;
-        } */
 
 /* Light Dark Mode Toggle */
 .darkModeToggle {
@@ -237,7 +214,7 @@ h1 {
 .optionsToggle {
     position: relative;
     display: block;
-    margin-top: 8rem;
+    margin-top: 25vh;
     justify-self: center;
     width: 105px;
     height: 31.5px;
@@ -251,7 +228,7 @@ h1 {
 .optionsToggle:after {
     content: "";
     width: 47px;
-    height: 20.5px;
+    height: 23.25px;
     position: absolute;
     top: 2.5px;
     left: 2.5px;
@@ -300,8 +277,8 @@ h1 {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 4rem;
-    margin-top: 2.5rem;
+    gap: 5vw;
+    margin-top: 5vh;
 }
 
 .wordsOption__container {
@@ -309,7 +286,7 @@ h1 {
 }
 
 .option__item {
-    font-size: 1.5rem;
+    font-size: 3.5vh;
     font-weight: 400;
     background: none;
     color: rgba(25, 27, 40, 0.5);

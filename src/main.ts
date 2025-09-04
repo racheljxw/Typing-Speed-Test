@@ -9,32 +9,32 @@ const optionsSection = document.querySelector(".options") as HTMLElement;
 let time: number = 0;
 let timer: number | null = null;
 const words: string[] = [
-    "aura", "ash", "always",
-    "beauty", "brand", "bored",
-    "cat", "course", "chat",
-    "dog", "drone", "dear",
-    "every", "elephant", "emerald",
-    "fox", "flower", "fashion",
-    "giant", "gas", "gorilla",
-    "hashtag", "horse", "home",
-    "igloo", "ice", "iteration",
-    "joker", "jelly", "jazz",
-    "karate", "kiss", "knight",
-    "love", "laugh", "land",
-    "money", "mango", "match",
-    "number", "normal", "nasty",
-    "opera", "open", "order",
-    "power", "pretty", "pastry",
-    "quiet", "queen", "queer",
-    "rose", "rabbit", "robot",
-    "sandwich", "shirt", "sling",
-    "throw", "tiger", "toast",
-    "umbrella", "under", "usher",
-    "violet", "velvet", "vast",
-    "wire", "wander", "witch",
-    "xenophobia", "xylophone",
-    "yam", "yellow", "yes",
-    "zealous", "zebra", "zoom"
+    "aura", "ash", "always", "adventure",
+    "beauty", "brand", "bored", "begin",
+    "cat", "course", "chat", "chore",
+    "dog", "drone", "dear", "diary",
+    "every", "elephant", "emerald", "early",
+    "fox", "flower", "fashion", "forest",
+    "giant", "gas", "gorilla", "goose",
+    "hashtag", "horse", "home", "help",
+    "igloo", "ice", "iteration", "ignite",
+    "joker", "jelly", "jazz", "joyous",
+    "karate", "kiss", "knight", "kilogram",
+    "love", "laugh", "land", "lounge",
+    "money", "mango", "match", "more",
+    "number", "normal", "nasty", "nut",
+    "opera", "open", "order", "other",
+    "power", "pretty", "pastry", "pottery",
+    "quiet", "queen", "queer", "quail",
+    "rose", "rabbit", "robot", "roller",
+    "sandwich", "shirt", "sling", "shed",
+    "throw", "tiger", "toast", "trash",
+    "umbrella", "under", "usher", "utensil",
+    "violet", "velvet", "vast", "vanilla",
+    "wire", "wander", "witch", "wedge",
+    "xenophobia", "xylophone", "xenon",
+    "yam", "yellow", "yes", "year", "yolk",
+    "zealous", "zebra", "zoom", "zero"
 ];
 let sampleText: string[] = ["the"];
 let incorrectLetter: number = 0;
@@ -93,10 +93,6 @@ function generateText(lines: number) {
             }
         }
     }
-
-    sampleText.forEach((word, index) => {
-        console.log(`Word ${index + 1}: ${word}`);
-    });
     
     for (let x = 0; x < lines; x++) {
         const newLine = document.createElement("div");
@@ -271,7 +267,6 @@ function calculateWords() {
     timer = setInterval(() => {
         time++;
         timeDisplay.textContent = `${time}s`;
-        console.log(wordsTyped);
 
         if (timer && wordsTyped == maxWords) {
             clearInterval(timer);
