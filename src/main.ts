@@ -260,6 +260,10 @@ function calculateWords() {
 }
 
 document.addEventListener("keydown", function(event) {
+    if (event.key === "Backspace") {
+        event.preventDefault();
+    }
+
     if (!testScreen || testScreen.style.display === "none") return;
 
     if (event.target instanceof HTMLElement && 
@@ -267,21 +271,14 @@ document.addEventListener("keydown", function(event) {
         return;
     }
 
-    isRunning++;
-    if (isRunning == 1) {
+    if (!isRunning) {
+        isRunning = 1;
         optionsSection.style.pointerEvents = "none";
         timeOption ? calculateTime() : calculateWords();
     }
 
     checkTyping(event.key);
     checkLines();
-});
-
-document.addEventListener("keydown", function(event) {
-    const letter = event.key;
-    if (letter === "Backspace") {
-        checkTyping(letter);
-    }
 });
 
 document.addEventListener("DOMContentLoaded", startRunning);
