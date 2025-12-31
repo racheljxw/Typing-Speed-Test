@@ -7,7 +7,7 @@ const testScreen = document.querySelector(".testScreen") as HTMLElement;
 const resultsScreen = document.querySelector(".resultsScreen") as HTMLElement;
 const optionsSection = document.querySelector(".options") as HTMLElement;
 let time: number = 0;
-let timer: number | null = null;
+let timer: NodeJS.Timeout | null = null;
 const words: string[] = [
     "aura", "ash", "always", "adventure",
     "beauty", "brand", "bored", "begin",
@@ -51,8 +51,7 @@ let accuracyResults: number[] = [];
 
 function generateText(lines: number) {
 
-    if (timeOption) {
-        maxWords = 25;
+    if (!timeOption && lines == 2) {
         const usedWords = new Set();
 
         if (usedWords.size >= words.length) {
@@ -69,27 +68,6 @@ function generateText(lines: number) {
                     usedWords.add(wordNum);
                 }
                 break;
-            }
-        }
-    } else {
-        if (lines == 2) {
-            const usedWords = new Set();
-
-            if (usedWords.size >= words.length) {
-                usedWords.clear();
-            }
-
-            for (let i = 0; i < maxWords; i++) {
-                while (true) {
-                    const wordNum = Math.floor(Math.random() * words.length);
-                    if (usedWords.has(wordNum)) continue;
-                    const word: string | undefined = words[wordNum];
-                    if (word) {
-                        sampleText.push(word);
-                        usedWords.add(wordNum);
-                    }
-                    break;
-                }
             }
         }
     }
@@ -144,7 +122,7 @@ function checkLines() {
             });
             if (lineLength == lineComplete) {
                 sampleLine.style.display = "none";
-                generateText(1);
+                if (!timeOption) generateText(1);
                 linePassed++;
             }
         }
@@ -281,19 +259,21 @@ function calculateWords() {
     }, 1000);
 }
 
-document.addEventListener("keypress", function(event) {
+document.addEventListener("keydown", function(event) {
+    if (!testScreen || testScreen.style.display === "none") return;
+
+    if (event.target instanceof HTMLElement && 
+        (event.target.tagName === "BUTTON" || event.target.tagName === "INPUT")) {
+        return;
+    }
+
     isRunning++;
     if (isRunning == 1) {
         optionsSection.style.pointerEvents = "none";
-        if (timeOption) {
-            calculateTime();
-        } else {
-            calculateWords();
-        }
+        timeOption ? calculateTime() : calculateWords();
     }
 
-    const letter = event.key;
-    checkTyping(letter);
+    checkTyping(event.key);
     checkLines();
 });
 
@@ -308,8 +288,28 @@ document.addEventListener("DOMContentLoaded", startRunning);
 goTestButton.addEventListener("click", startRunning);
 
 function startRunning() {
+    (document.activeElement as HTMLElement)?.blur();
+    
+    if (timer) {
+        clearInterval(timer);
+    }
     text.innerHTML = "";
     sampleText = ["the"];
+    if (timeOption) {
+        const usedWords = new Set();
+        for (let i = 0; i < 100; i++) {
+            while (true) {
+                const wordNum = Math.floor(Math.random() * words.length);
+                if (usedWords.has(wordNum)) continue;
+                const word: string | undefined = words[wordNum];
+                if (word) {
+                    sampleText.push(word);
+                    usedWords.add(wordNum);
+                }
+                break;
+            }
+        }
+    }
     time = 0;
     timer = null;
     incorrectLetter = 0;
